@@ -144,7 +144,7 @@ def inpaint(sampler, image, mask, prompt, seed, scale, ddim_steps, num_samples=1
                                  min=0.0, max=1.0)
 
             result = result.cpu().numpy().transpose(0,2,3,1)
-            result, has_nsfw_concept = check_safety(result)
+            # result, has_nsfw_concept = check_safety(result)
             result = result*255
 
     result = [Image.fromarray(img.astype(np.uint8)) for img in result]
